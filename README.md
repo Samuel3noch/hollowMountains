@@ -1,11 +1,6 @@
 # Read Me
-A gardener wants a modern website that allows customers to easily order garden services. <br>
-Customers should be able to specify an address and time on the website and choose a package, such as "Garden Maintenance."
 
-The gardener also wants a management environment (back-end) where they can:
-
-- View and manage orders
-- Add or modify packages
+- text
 
 ## Video of the application
 
