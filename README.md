@@ -17,12 +17,31 @@
 
 ## Folder structure
 ```plaintext
-blanco/
-├──
-├── css
-|   └── style.css
-├── index.html
-└── readme.md
+hollowMountains/          # Root project
+|
+├─ index.php   
+├─ backend/
+|  ├─ config/
+│  │   └─ db.php
+│  ├─ models/            # Klassen of logica voor database tabellen
+│  │   ├─ Personeel.php
+│  │   ├─ Attractie.php
+│  │   ├─ Onderhoud.php
+│  │   └─ OnderhoudSchema.php
+│  ├─ controllers/       # Logica voor CRUD, user stories
+│  └─ migrations/        # SQL scripts om database op te zetten
+│       └─ init.sql
+│
+├─ frontend/              # Alles wat met UI te maken heeft
+│   ├─ Style.css/
+│   └─ Script.js/
+│
+├─ docs/                  # Documentatie, ERD, user stories, presentaties
+│
+├─ tests/                 # Optioneel: test scripts
+│
+├─ .gitignore             # Belangrijk! Zodat tijdelijke bestanden niet mee gaan
+└─ README.md
 ```
 
 ## Lessons learned

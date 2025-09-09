@@ -1,0 +1,19 @@
+# Node modules (als je npm gebruikt)
+node_modules/
+
+# OS bestanden
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# IDE config files
+.idea/
+*.vscode/
+
+# Database credentials
+config/db.php
+
+# Build/compiled files
+/dist/
