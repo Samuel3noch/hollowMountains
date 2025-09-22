@@ -1,26 +1,27 @@
 <?php
-class AttractieController {
+// backend/controllers/attractieController.php
+
+class attractieController {
     private $pdo;
 
-    public function __construct($pdo) {
+    public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
     }
 
-    // Functie om een nieuwe attractie toe te voegen
-    public function createAttractie($naam, $locatie, $type, $technische_specs) {
-        try {
-            $sql = "INSERT INTO attractie (naam, locatie, type, technische_specs) 
-                    VALUES (:naam, :locatie, :type, :technische_specs)";
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute([
-                ':naam' => $naam,
-                ':locatie' => $locatie,
-                ':type' => $type,
-                ':technische_specs' => $technische_specs
-            ]);
-            return "✅ Attractie succesvol toegevoegd!";
-        } catch (PDOException $e) {
-            return "❌ Fout bij toevoegen: " . $e->getMessage();
-        }
+    public function createAttractie(string $naam, string $locatie, string $type, ?string $technische_specs): bool {
+        $sql = "INSERT INTO attractie (naam, locatie, type, technische_specs)
+                VALUES (:naam, :locatie, :type, :technische_specs)";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([
+            ':naam' => trim($naam),
+            ':locatie' => trim($locatie),
+            ':type' => trim($type),
+            ':technische_specs' => $technische_specs !== "" ? trim($technische_specs) : null
+        ]);
+    }
+
+    public function getAllAttracties(): array {
+        $stmt = $this->pdo->query("SELECT * FROM attractie ORDER BY id DESC");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
