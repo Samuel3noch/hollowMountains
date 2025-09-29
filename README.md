@@ -19,28 +19,35 @@
 ```plaintext
 hollowMountains/          # Root project
 |
-├─ index.php   
+ 
 ├─ backend/
 |  ├─ config/
 │  │   └─ db.php
+|  ├─ controllers/       # Logica voor CRUD, user stories
+│  │   └─ attractieController.php
+│  ├─ migrations/        # SQL scripts om database op te zetten
+│  │    └─ hollowdata.sql
 │  ├─ models/            # Klassen of logica voor database tabellen
-│  │   ├─ Personeel.php
 │  │   ├─ Attractie.php
-│  │   ├─ Onderhoud.php
-│  │   └─ OnderhoudSchema.php
-│  ├─ controllers/       # Logica voor CRUD, user stories
-│  └─ migrations/        # SQL scripts om database op te zetten
-│       └─ init.sql
-│
-├─ frontend/              # Alles wat met UI te maken heeft
-│   ├─ Style.css/
-│   └─ Script.js/
+│  │   ├─ OnderhoudSchema.php
+│  │   ├─ Onderhoudstaak.php
+│  │   └─ Personeel.php
 │
 ├─ docs/                  # Documentatie, ERD, user stories, presentaties
 │
-├─ tests/                 # Optioneel: test scripts
+├─ frontend/              # Alles wat met UI te maken heeft
+│  │   ├─ attracties/
+│  │   └─ add.php
+|  ├─ Script.js
+│  └─ Style.css
+│
+├─ test/                 # Optioneel: test scripts
+│
+├─ uploads/
 │
 ├─ .gitignore             # Belangrijk! Zodat tijdelijke bestanden niet mee gaan
+├─ index.php  
+├─ LICENSE
 └─ README.md
 ```
 

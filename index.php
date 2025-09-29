@@ -14,5 +14,11 @@ if ($pdo) echo "Database werkt!";
         require_once 'backend/config/db.php';
         echo $pdo ? "✅" : "❌";
     ?></p>
+    <?php if (!empty($attractie['foto'])): ?>
+    <p><strong>Foto:</strong><br>
+       <img src="/hollowMountains/<?php echo htmlspecialchars($attractie['foto']); ?>" alt="Foto attractie" style="max-width:400px;">
+    </p>
+    <?php endif; ?>
+
 </body>
 </html>
