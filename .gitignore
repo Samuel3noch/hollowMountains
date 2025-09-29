@@ -17,3 +17,7 @@ config/db.php
 
 # Build/compiled files
 /dist/
+
+# Uploads
+/uploads/
+/backend/config/*.php      # als je echte credentials hebt, zet config lokaal en ignore
